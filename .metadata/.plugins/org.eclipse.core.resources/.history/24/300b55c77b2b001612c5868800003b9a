@@ -1,0 +1,49 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+
+import junit.framework.*;
+
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class Test1 extends file1 {
+	 Test1 SaraFile=new Test1();
+	   String name="file1.txt";
+	   String cfile="/Users/sarafarahmand/Desktop/comcast1/file1.txt";
+	   String dfile="/Users/sarafarahmand/Desktop/comcast1/file2.txt";
+	   File f = new File("/Users/sarafarahmand/Desktop/comcast1");
+	   File file1 = new File("/Users/sarafarahmand/Desktop/comcast1/file1.txt");
+	   File file2 = new File("/Users/sarafarahmand/Desktop/comcast1/file2.txt");
+	   String content = "This is the content to write into file"; 
+	   File dir = new File("/Users/sarafarahmand/Desktop/comcast1");
+	   File srcFolder = new File("/Users/sarafarahmand/Desktop/comcast1"); 
+	   File destFolder = new File("/Users/sarafarahmand/Desktop/New");
+   
+   
+   @Before
+   public void setUp(){
+	   System.out.println("@Before - setUp");   
+   }
+
+   @Test
+   public void testMemoryfilesystem() throws IOException {
+	   SaraFile.createFolder(f);
+	   SaraFile.createFileAndAddContent(file1, file2);
+	   SaraFile.copyAndDisplayFile(cfile,dfile);
+	   SaraFile.listFolderContents();
+	   SaraFile.SearchFileByName();
+	   SaraFile.search2(dir);
+       SaraFile.copyFolder( srcFolder, destFolder);
+   }
+   
+   @After
+   public void tearDown() {
+       System.out.println("@After - tearDown");
+   }
+}
+

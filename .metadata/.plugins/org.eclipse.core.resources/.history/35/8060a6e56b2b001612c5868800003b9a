@@ -1,0 +1,19 @@
+import junit.framework.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class Test1 extends file1 {
+   protected int value1, value2;
+   
+   // assigning the values
+   protected void setUp(){
+      
+   }
+
+   @Test
+   public void testMemoryfilesystem() {
+      System.out.println("Inside testMemoryfilesystem()");
+      
+   }
+}
+

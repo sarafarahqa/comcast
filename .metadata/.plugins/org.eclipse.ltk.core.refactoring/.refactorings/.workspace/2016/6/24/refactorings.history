@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SampleJUNIT&apos; to &apos;ComcastQuestion4MemoryFileSystem&apos;" description="Rename resource &apos;SampleJUNIT&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SampleJUNIT" name="ComcastQuestion4MemoryFileSystem" stamp="1465175738630" updateReferences="true"/>
+</session>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="EarlyEngagement"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
+<listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
+<listEntry value="com.kp.automation.page.C2CConstantPageSara"/>
+<listEntry value="com.kp.automation.base.AfterMethod"/>
+<listEntry value="com.kp.automation.page.DoctorLandingPage"/>
+<listEntry value="com.kp.automation.page.C2Cpage1"/>
+<listEntry value="com.kp.automation.base.TestBase"/>
+<listEntry value="com.kp.automation.page.C2CSignOnPageX1"/>
+<listEntry value="com.kp.automation.page.C2CStep1Bpage"/>
+<listEntry value="test"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.NewMemberAlertTest"/>
+<listEntry value="util.FileNameUtil"/>
+<listEntry value="com.kp.automation.page.MemberHomeConstant"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.JKPEETest"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.C2CPTest"/>
+<listEntry value="com.kp.automation.page.ChatwithRepErrorpage"/>
+<listEntry value="com.kp.automation.page.GetCareConstant"/>
+<listEntry value="com.kp.automation.page.MemberLandingPageNonSignedIn"/>
+<listEntry value="com.kp.automation.page.GetCarePage"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.GetCareTest"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.C2CTestSara"/>
+<listEntry value="com.kp.automation.tests.earlyengagement.SmokeTest"/>
+<listEntry value="com.kp.automation.page.NonMemberSignInLandingPage"/>
+<listEntry value="com.kp.automation.page.MemberLandingPage"/>
+<listEntry value="com.kp.automation.page.C2CStep1APage"/>
+<listEntry value="com.kp.automation.page.C2CPConstant"/>
+<listEntry value="com.kp.automation.page.MemberHomePage"/>
+<listEntry value="com.kp.automation.page.unsecuredDemoConstants"/>
+</listAttribute>
+<listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
+<listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+<mapAttribute key="org.testng.eclipse.PARAMETERS"/>
+<stringAttribute key="org.testng.eclipse.PRE_DEFINED_LISTENERS" value=""/>
+<intAttribute key="org.testng.eclipse.TYPE" value="1"/>
+</launchConfiguration>

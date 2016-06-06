@@ -1,0 +1,160 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
+import org.junit.Test;
+
+
+public class class1 {
+    public static void createFolder(String path) throws Exception {
+        File dir = new File(path);
+        dir.mkdir();
+    }
+
+   // public static void main(String[] args) throws Exception {
+     //   String path = args[0]; //takes the first argument from the command line
+     //   createFolder(path);
+   // }
+
+    public static void createFile(String path) throws Exception {
+        File file = new File("c://temp//testFile1.txt");
+
+       //Create the file
+        if (file.createNewFile()){
+            System.out.println("File is created!");
+        }else{
+            System.out.println("File already exists.");
+     }
+
+//Write Content
+//FileWriter writer = new FileWriter(file);
+//writer.write("Test data");
+//writer.close();
+}
+    
+    public static void WriteInFile(String path) throws Exception{
+    
+         try(FileWriter fw = new FileWriter("outfilename", true);
+    	    BufferedWriter bw = new BufferedWriter(fw);
+    	    PrintWriter out = new PrintWriter(bw))
+    	{
+    	    out.println("the text");
+    	    out.println("more text");
+    	  
+    	} catch (IOException e) {
+    	    //exception handling left as an exercise for the reader
+    	}
+}
+    public static void copyFiles(File source, File dest) throws IOException {
+
+           Files.copy(source.toPath(), dest.toPath());
+   
+    }
+    public static void displayFile(String path, String content) throws Exception{
+    try (InputStream in = Files.newInputStream(null, null);
+    	    BufferedReader reader =
+    	      new BufferedReader(new InputStreamReader(in))) {
+    	    String line = null;
+    	    while ((line = reader.readLine()) != null) {
+    	        System.out.println(line);
+    	    }
+    	} catch (IOException x) {
+    	    System.err.println(x);
+    	}
+    }
+    
+    public void listFiles(String directoryName){
+        File directory = new File(directoryName);
+        //get all the files from a directory
+        File[] fList = directory.listFiles();
+        for (File file : fList){
+            if (file.isFile()){
+                System.out.println(file.getName());
+            }
+        }
+    }
+    public void findFiles(String directoryName)
+    throws Exception {
+        File dir = new File("directoryName");
+        String[] children = dir.list();
+        if (children == null) {
+           System.out.println("does not exist or is not a directory");
+        }
+        else {
+           for (int i = 0; i < children.length; i++) {
+              String filename = children[i];
+              System.out.println(filename);
+           }
+        }
+     }
+    
+    public void findFile2(String name,File file)
+    {
+        File[] list = file.listFiles();
+        if(list!=null)
+        for (File fil : list)
+        {
+            if (fil.isDirectory())
+            {
+                findFile2(name,fil);
+            }
+            else if (name.equalsIgnoreCase(fil.getName()))
+            {
+                System.out.println(fil.getParentFile());
+            }
+        }
+    }
+   /* public static void main(String[] args) 
+    {
+        FindFile ff = new FindFile();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the file to be searched.. " );
+        String name = scan.next();
+        System.out.println("Enter the directory where to search ");
+        String directory = scan.next();
+        ff.findFile(name,new File(directory));*/
+    
+    
+    private static void copyFolder(File sourceFolder, File destinationFolder) throws IOException
+    {
+        //Check if sourceFolder is a directory or file
+        //If sourceFolder is file; then copy the file directly to new location
+        if (sourceFolder.isDirectory()) 
+        {
+            //Verify if destinationFolder is already present; If not then create it
+            if (!destinationFolder.exists()) 
+            {
+                destinationFolder.mkdir();
+                System.out.println("Directory created :: " + destinationFolder);
+            }
+             
+            //Get all files from source directory
+            String files[] = sourceFolder.list();
+             
+            //Iterate over all files and copy them to destinationFolder one by one
+            for (String file : files) 
+            {
+                File srcFile = new File(sourceFolder, file);
+                File destFile = new File(destinationFolder, file);
+                 
+                //Recursive function call
+                copyFolder(srcFile, destFile);
+            }
+        }
+        else
+        {
+            //Copy the file content from one place to another 
+            Files.copy(sourceFolder.toPath(), destinationFolder.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("File copied :: " + destinationFolder);
+        }
+    }
+}
+   
+
